@@ -8,10 +8,17 @@ body {
   color: #253238;
 }
 header {
+  font-family: gasoekOne;
   background: linear-gradient(120deg, #04AA6D, #058457);
   color: #fff;
-  padding: 60px 20px;
-  text-align: center;
+  padding: 70px 80px 10px;
+  text-align: right;
+  line-height: 010px;
+}
+header p {
+  font-family: Roboto;
+  color: #00FFBB;
+
 }
 main {
   max-width: 960px;
@@ -34,4 +41,10 @@ footer {
   text-align: center;
   background: #e8edf4;
   font-size: 0.9rem;
+}
+
+
+@font-face {
+  font-family: gasoekOne; /* set name */
+  src: url(GasoekOne-Regular.ttf); /* url of the font */
 }
