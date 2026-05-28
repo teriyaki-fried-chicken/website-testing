@@ -9,16 +9,17 @@ body {
 }
 header {
   font-family: gasoekOne;
-  background-image: url("placeholdertitleimg.png");
-  background-position: right;
+  background-image: url("assets/placeholdertitleimg.png");
+  background-position: left;
   background-repeat: no-repeat;
-  background-size: 1400px 500px;
-  background-origin: center;
+  background-size: 1300px 500px;
+
   color: #fff;
-  padding: 110px 30px 10px;
-  text-align: right;
+  padding: 110px 40px 10px;
+  text-align: left;
   letter-spacing: 1.5px;
   line-height: 10px;
+  font-size: larger;
 }
 header p {
   font-family: "Courier New", monospace;
