@@ -9,15 +9,21 @@ body {
 }
 header {
   font-family: gasoekOne;
-  background: linear-gradient(120deg, #04AA6D, #058457);
+  background-image: url("placeholdertitleimg.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 1400px 500px;
+  background-origin: center;
   color: #fff;
-  padding: 70px 80px 10px;
+  padding: 110px 30px 10px;
   text-align: right;
-  line-height: 010px;
+  letter-spacing: 1.5px;
+  line-height: 10px;
 }
 header p {
-  font-family: Roboto;
-  color: #00FFBB;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0px;
+  color: #ffffff;
 
 }
 main {
