@@ -1,17 +1,149 @@
 <!DOCTYPE html>
-<div class="parent">
-  <h2>parent<br>
-   
-  </h2>
-  <div class="child">
-      <h2>child 1</h2>
-      <code>grid-area: 1 / 1 / 2 / 2;</code>
-  </div>
-  
-  <div class="child child2">
-      <h2>child 2</h2>
-      <code>grid-area: 1 / 1 / 2 / 2;</code>
-      <code>margin-left: 200px;</code>
+<link rel="stylesheet" href="css/styles.css" type="text/css">
+
+<html>
+<head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
+  /* NEW: flex layout to control image + caption sizing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content (image + caption wrapper) */
+.modal-content {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  height: 90vh; /* KEY: total height for image + caption */
+}
+
+/* Modal Content (image) */
+.modal-content img {
+  flex: 1 1 auto;       /* image takes all remaining space */
+  height: 100%;         /* fill vertically */
+  width: auto;          /* prevent width from shrinking image */
+  object-fit: contain;  /* preserve aspect ratio */
+  display: block;
+}
+
+/* Caption of Modal Image */
+#caption {
+  flex: 0 0 auto;       /* caption takes minimal space */
+  margin-top: 6px;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 0;
+  height: auto;         /* no forced height */
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  cursor: pointer; /* keep pointer */
+  transition: 0.3s; /* keep transition */
+}
+
+/* Size the close-button image */
+.close img {
+  width: 32px;   /* adjust as needed */
+  height: 32px;
+  object-fit: contain;
+  transition: 0.3s; /* smooth hover fade */
+}
+
+/* Lighten on hover */
+.close:hover img {
+  filter: brightness(1.4); /* brighten the icon */
+}
+
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<h2>Image Modal</h2>
+<p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+<p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+
+<!--assets and art dump-->
+<img id="myImg" src="assets/art_placeholder.png" alt="Snow" style="width:100%;max-width:300px">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close"><img src="/assets/close_button_icoon_placeholder.jpg"></span>
+
+  <div class="modal-content">
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
   </div>
 </div>
 
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "flex";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
