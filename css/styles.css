@@ -9,13 +9,15 @@ body {
 }
 header {
   font-family: gasoekOne;
-  background-image: url("assets/placeholdertitleimg.png");
-  background-position: left;
+ /* background-image: url("css_assets/placeholdertitleimg.png");
+  background-position: absolute;
   background-repeat: no-repeat;
   background-size: 1300px 500px;
+  
+  old header code ^^^^*/
 
   color: #fff;
-  padding: 110px 40px 10px;
+  padding: 100px 40px 10px;
   text-align: left;
   letter-spacing: 1.5px;
   line-height: 10px;
@@ -27,10 +29,60 @@ header p {
   color: #ffffff;
 
 }
+
+/*Sliding background header*/
+.container {
+  overflow: hidden;
+  padding: 0%;
+  margin: 0%;
+}
+
+.sliding-background {
+  position: relative;
+  background: url(css_assets/placeholdertitleimg.png) repeat-x;
+  height: 300px;
+  width: 9000px;
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide{
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
+/*https://css-tricks.com/how-to-stack-elements-in-css/*/
+/*overlapping divs*/
+.parent {
+  overflow: hidden;
+  position: relative;
+  background: #000000;
+  width: 100;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+}
+
+.child {
+  height: 150px;
+  width: 100;
+  position: absolute;
+  top: 90px;
+}
+/*this is the LOONTERO text box*/
+.child1 {
+  left: 0;
+}
+/*END of header css code styling*/
+
+
 main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 section {
   background: #fff;
@@ -50,8 +102,40 @@ footer {
   font-size: 0.9rem;
 }
 
+/*nav bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  justify-content: center;
+  display: flex;
+}
 
+ul li {
+        display: inline-block;
+}
+
+ul li a {
+        display: block;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 9px 40px;
+        text-decoration: none;
+}
+
+ul li a:hover {
+        color: #a30000;
+}
+
+
+
+/*FONTS*/
 @font-face {
   font-family: gasoekOne; /* set name */
   src: url(GasoekOne-Regular.ttf); /* url of the font */
 }
+
+
+
